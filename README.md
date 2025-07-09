@@ -1,14 +1,23 @@
-<!-- 页面容器 -->
-<div class="page-center">
+<!-- 页面主容器 -->
+<div class="page-wrapper">
+  <!-- 装饰元素 -->
+  <div class="decor-top"></div>
+  <div class="decor-bottom"></div>
+
   <!-- 技术模块 -->
   <div class="module-container">
     <a href="./technology/" class="module tech">
+      <div class="module-bg"></div> <!-- 背景纹理 -->
       <div class="module-content">
-        <div class="icon-box">
-          <div class="icon-tech"></div>
+        <div class="corner-mark"></div> <!-- 角落装饰 -->
+        <div class="icon tech-icon">
+          <!-- 技术图标：代码片段 -->
+          <div class="code-line"></div>
+          <div class="code-line"></div>
+          <div class="code-line"></div>
         </div>
         <h3>技术</h3>
-        <div class="underline"></div>
+        <div class="glow-line"></div> <!-- 光效线条 -->
       </div>
     </a>
   </div>
@@ -16,12 +25,17 @@
   <!-- 业务模块 -->
   <div class="module-container">
     <a href="./business/" class="module business">
+      <div class="module-bg"></div>
       <div class="module-content">
-        <div class="icon-box">
-          <div class="icon-business"></div>
+        <div class="corner-mark"></div>
+        <div class="icon business-icon">
+          <!-- 业务图标：柱状图表 -->
+          <div class="bar bar-1"></div>
+          <div class="bar bar-2"></div>
+          <div class="bar bar-3"></div>
         </div>
         <h3>业务</h3>
-        <div class="underline"></div>
+        <div class="glow-line"></div>
       </div>
     </a>
   </div>
@@ -29,12 +43,20 @@
   <!-- 工作日常模块 -->
   <div class="module-container">
     <a href="./daily/" class="module daily">
+      <div class="module-bg"></div>
       <div class="module-content">
-        <div class="icon-box">
-          <div class="icon-daily"></div>
+        <div class="corner-mark"></div>
+        <div class="icon daily-icon">
+          <!-- 日常图标：日历 -->
+          <div class="calendar-top"></div>
+          <div class="calendar-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
         </div>
         <h3>工作日常</h3>
-        <div class="underline"></div>
+        <div class="glow-line"></div>
       </div>
     </a>
   </div>
@@ -48,159 +70,227 @@
   box-sizing: border-box;
 }
 
-/* 页面居中容器 */
-.page-center {
+body {
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-  padding: 20px;
-  background: #ffffff;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* 模块容器（三大模块整体居中） */
-.page-center {
-  gap: 60px; /* 模块之间的间距 */
+/* 顶部/底部装饰 */
+.decor-top, .decor-bottom {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #10b981, #f97316, transparent);
+  z-index: 1;
+}
+.decor-top { top: 0; }
+.decor-bottom { bottom: 0; }
+
+/* 主容器 */
+.page-wrapper {
+  display: flex;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
 }
 
-/* 单个模块容器 */
+/* 模块容器 */
 .module-container {
-  width: 220px; /* 固定宽度，确保对齐 */
+  flex: 1;
+  min-width: 250px;
 }
 
-/* 模块链接样式 */
+/* 模块链接 */
 .module {
   display: block;
   text-decoration: none;
+  position: relative;
+}
+
+/* 模块背景纹理（微妙点阵） */
+.module-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 18px;
+  z-index: 1;
 }
 
 /* 模块内容区 */
 .module-content {
-  padding: 45px 20px;
-  text-align: center;
-  border-radius: 14px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  padding: 50px 30px;
+  border-radius: 18px;
   border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+  transition: all 0.4s ease;
+  z-index: 2;
 }
 
-/* 图标容器 */
-.icon-box {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 30px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 角落装饰 */
+.corner-mark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
-/* 图标样式 */
-.icon-tech {
-  width: 28px;
-  height: 28px;
-  background: #4263eb;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0 75%);
+/* 图标容器 */
+.icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 35px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.4s ease;
 }
 
-.icon-business {
-  width: 28px;
-  height: 28px;
-  background: #0ca678;
-  clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
+/* 技术图标（代码片段） */
+.tech-icon {
+  background: #f0f7ff;
 }
+.code-line {
+  width: 40px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+.code-line:nth-child(2) { width: 30px; }
+.code-line:nth-child(3) { width: 35px; }
 
-.icon-daily {
-  width: 28px;
-  height: 28px;
-  background: #f76707;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+/* 业务图标（柱状图表） */
+.business-icon {
+  background: #f0fff4;
+}
+.bar {
+  width: 8px;
+  background: #10b981;
+  border-radius: 3px;
+}
+.bar-1 { height: 30px; }
+.bar-2 { height: 45px; margin: 0 6px; }
+.bar-3 { height: 25px; }
+
+/* 工作日常图标（日历） */
+.daily-icon {
+  background: #fff8f0;
+}
+.calendar-top {
+  width: 40px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 8px);
+  gap: 4px;
+}
+.calendar-grid span {
+  width: 8px;
+  height: 8px;
+  background: #f97316;
+  border-radius: 2px;
 }
 
 /* 标题样式 */
 .module h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+  margin-bottom: 25px;
   transition: color 0.3s ease;
 }
 
-/* 下划线装饰 */
-.underline {
-  width: 30px;
-  height: 2px;
+/* 底部光效线条 */
+.glow-line {
+  width: 40px;
+  height: 3px;
   margin: 0 auto;
-  transition: width 0.3s ease;
+  border-radius: 3px;
+  transition: all 0.4s ease;
 }
 
-/* 技术模块配色 */
-.tech .icon-box {
-  background: #eef2ff;
-}
-.tech h3 {
-  color: #1e3a8a;
-}
-.tech .underline {
-  background: #4263eb;
+/* 配色方案 */
+.tech .corner-mark { background: #3b82f6; opacity: 0.2; }
+.tech .glow-line { 
+  background: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
-/* 业务模块配色 */
-.business .icon-box {
-  background: #e6fcf5;
-}
-.business h3 {
-  color: #087f5b;
-}
-.business .underline {
-  background: #0ca678;
+.business .corner-mark { background: #10b981; opacity: 0.2; }
+.business .glow-line { 
+  background: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
-/* 工作日常模块配色 */
-.daily .icon-box {
-  background: #fff4e6;
-}
-.daily h3 {
-  color: #c2410c;
-}
-.daily .underline {
-  background: #f76707;
+.daily .corner-mark { background: #f97316; opacity: 0.2; }
+.daily .glow-line { 
+  background: #f97316;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
 }
 
-/* 悬停效果 */
+/* 悬停交互效果 */
 .module:hover .module-content {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.04);
-  border-color: #eaeaea;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05), 0 8px 15px rgba(0,0,0,0.02);
+  border-color: #e8e8e8;
 }
 
-.module:hover .icon-box {
-  transform: scale(1.05);
+.module:hover .icon {
+  transform: scale(1.1);
 }
 
-.module:hover .underline {
-  width: 50px;
+.module:hover .corner-mark {
+  transform: rotate(10deg);
+  opacity: 0.4;
 }
 
-/* 响应式调整（确保小屏仍居中） */
-@media (max-width: 768px) {
-  .page-center {
-    flex-direction: column; /* 小屏垂直排列 */
+.module:hover h3 {
+  color: #111;
+}
+
+.module:hover .glow-line {
+  width: 60px;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); /* 增强光效 */
+}
+
+/* 响应式设计 */
+@media (max-width: 850px) {
+  .page-wrapper {
+    flex-direction: column;
     gap: 40px;
-    padding: 60px 20px;
+    padding: 30px 20px;
   }
-
-  .module-container {
-    width: 100%;
-    max-width: 280px; /* 小屏固定最大宽度 */
-  }
-
+  
   .module-content {
-    padding: 40px 20px;
+    padding: 45px 20px;
   }
-
+  
   .module h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
