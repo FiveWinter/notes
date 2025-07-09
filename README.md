@@ -20,3 +20,15 @@
     </div>
   </a>
 </div>
+
+<style>
+.content {
+  margin-left: 0px;
+}
+.sidebar-toggle{
+    display: none;
+}
+.sidebar{
+    display: none;
+}
+</style>
