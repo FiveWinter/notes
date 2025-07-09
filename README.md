@@ -2,7 +2,7 @@
 <div class="page-center">
   <!-- 技术模块（代码符号图标） -->
   <div class="module-container">
-    <a href="./technology/" class="module-link">
+    <a href="#/./technology/index1" class="module-link">
       <!-- 装饰层：第一个div -->
       <div class="decor">
         <div class="shine tech"></div>
@@ -87,6 +87,8 @@ body {
   position: relative;
   height: 100%;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .module-container {
