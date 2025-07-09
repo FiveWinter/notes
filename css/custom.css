@@ -89,3 +89,7 @@ body[data-page="/"] .sidebar {
     .sidebar ul li a:hover {
         text-decoration: unset;
     }
+
+    .sidebar ul li ul {
+        padding-left: 20px;
+    }
