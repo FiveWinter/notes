@@ -85,11 +85,15 @@ body {
   width: 100%;
   max-width: 1000px;
   position: relative;
+  height: 100%;
+  display: flex;
 }
 
 .module-container {
   flex: 1;
   min-width: 250px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .module-link {
@@ -134,6 +138,7 @@ body {
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   z-index: 2;
   border: 1px solid rgba(0,0,0,0.05);
+  height: 100%;
 }
 
 /* 图标容器 */
@@ -292,5 +297,9 @@ body {
 }
 .sidebar{
     display: none;
+}
+
+.markdown-section{
+  height: 100%;
 }
 </style>
