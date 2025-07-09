@@ -1,7 +1,7 @@
 # Welcome to My Documentation Site
 
 <div class="section-container">
-  <a href="./technology/index" class="section-link">
+  <a href="technology/index" class="section-link">
     <div class="section">
       <h2>技术</h2>
       <p>探索技术相关的文档和教程</p>
