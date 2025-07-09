@@ -1,40 +1,40 @@
-<!-- 容器 -->
-<div class="modules-wrapper">
+<!-- 页面容器 -->
+<div class="page-center">
   <!-- 技术模块 -->
-  <div class="module-item">
+  <div class="module-container">
     <a href="./technology/" class="module tech">
-      <div class="module-inner">
-        <div class="module-icon">
-          <div class="icon-shape"></div>
+      <div class="module-content">
+        <div class="icon-box">
+          <div class="icon-tech"></div>
         </div>
         <h3>技术</h3>
-        <div class="module-line"></div>
+        <div class="underline"></div>
       </div>
     </a>
   </div>
 
   <!-- 业务模块 -->
-  <div class="module-item">
+  <div class="module-container">
     <a href="./business/" class="module business">
-      <div class="module-inner">
-        <div class="module-icon">
-          <div class="icon-shape"></div>
+      <div class="module-content">
+        <div class="icon-box">
+          <div class="icon-business"></div>
         </div>
         <h3>业务</h3>
-        <div class="module-line"></div>
+        <div class="underline"></div>
       </div>
     </a>
   </div>
 
   <!-- 工作日常模块 -->
-  <div class="module-item">
+  <div class="module-container">
     <a href="./daily/" class="module daily">
-      <div class="module-inner">
-        <div class="module-icon">
-          <div class="icon-shape"></div>
+      <div class="module-content">
+        <div class="icon-box">
+          <div class="icon-daily"></div>
         </div>
         <h3>工作日常</h3>
-        <div class="module-line"></div>
+        <div class="underline"></div>
       </div>
     </a>
   </div>
@@ -48,26 +48,24 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #ffffff;
+/* 页面居中容器 */
+.page-center {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  padding: 20px;
+  background: #ffffff;
 }
 
-/* 模块容器 */
-.modules-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  width: 100%;
-  max-width: 1000px;
+/* 模块容器（三大模块整体居中） */
+.page-center {
+  gap: 60px; /* 模块之间的间距 */
 }
 
-.module-item {
-  width: 100%;
+/* 单个模块容器 */
+.module-container {
+  width: 220px; /* 固定宽度，确保对齐 */
 }
 
 /* 模块链接样式 */
@@ -76,119 +74,131 @@ body {
   text-decoration: none;
 }
 
-.module-inner {
-  position: relative;
-  padding: 50px 30px;
+/* 模块内容区 */
+.module-content {
+  padding: 45px 20px;
   text-align: center;
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid #f0f0f0;
 }
 
 /* 图标容器 */
-.module-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 35px;
-  border-radius: 12px;
+.icon-box {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 30px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
 }
 
-/* 几何图标 */
-.icon-shape {
-  width: 30px;
-  height: 30px;
-  transition: all 0.3s ease;
+/* 图标样式 */
+.icon-tech {
+  width: 28px;
+  height: 28px;
+  background: #4263eb;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0 75%);
+}
+
+.icon-business {
+  width: 28px;
+  height: 28px;
+  background: #0ca678;
+  clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
+}
+
+.icon-daily {
+  width: 28px;
+  height: 28px;
+  background: #f76707;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
 
 /* 标题样式 */
 .module h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
-/* 底部装饰线 */
-.module-line {
+/* 下划线装饰 */
+.underline {
   width: 30px;
   height: 2px;
-  border-radius: 1px;
   margin: 0 auto;
-  transition: all 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 /* 技术模块配色 */
-.tech .module-icon {
-  background: #f0f9ff;
-}
-.tech .icon-shape {
-  background: #3b82f6;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* 钻石形 */
+.tech .icon-box {
+  background: #eef2ff;
 }
 .tech h3 {
-  color: #1e40af;
+  color: #1e3a8a;
 }
-.tech .module-line {
-  background: #3b82f6;
+.tech .underline {
+  background: #4263eb;
 }
 
 /* 业务模块配色 */
-.business .module-icon {
-  background: #f0fdf4;
-}
-.business .icon-shape {
-  background: #10b981;
-  border-radius: 6px; /* 矩形 */
+.business .icon-box {
+  background: #e6fcf5;
 }
 .business h3 {
-  color: #065f46;
+  color: #087f5b;
 }
-.business .module-line {
-  background: #10b981;
+.business .underline {
+  background: #0ca678;
 }
 
 /* 工作日常模块配色 */
-.daily .module-icon {
-  background: #fff7ed;
-}
-.daily .icon-shape {
-  background: #f97316;
-  border-radius: 50%; /* 圆形 */
+.daily .icon-box {
+  background: #fff4e6;
 }
 .daily h3 {
   color: #c2410c;
 }
-.daily .module-line {
-  background: #f97316;
+.daily .underline {
+  background: #f76707;
 }
 
-/* 悬停交互效果 */
-.module:hover .module-inner {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-  border-color: #e2e8f0;
+/* 悬停效果 */
+.module:hover .module-content {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.04);
+  border-color: #eaeaea;
 }
-.module:hover .module-icon {
+
+.module:hover .icon-box {
   transform: scale(1.05);
 }
-.module:hover .module-line {
+
+.module:hover .underline {
   width: 50px;
 }
 
-/* 响应式设计 */
+/* 响应式调整（确保小屏仍居中） */
 @media (max-width: 768px) {
-  .modules-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .page-center {
+    flex-direction: column; /* 小屏垂直排列 */
+    gap: 40px;
+    padding: 60px 20px;
   }
-  .module-inner {
+
+  .module-container {
+    width: 100%;
+    max-width: 280px; /* 小屏固定最大宽度 */
+  }
+
+  .module-content {
     padding: 40px 20px;
   }
+
   .module h3 {
     font-size: 1.3rem;
   }
