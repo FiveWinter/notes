@@ -6,11 +6,6 @@ body {
 }
 
 
-/* 内容区域样式 */
-.content {
-    padding: 20px;
-}
-
 /* 首页容器样式 */
 .section-container {
   display: flex;
@@ -89,4 +84,8 @@ body[data-page="/"] .sidebar {
     .sidebar ul {
         margin: 0 0 0 0;
         padding: 0;
+    }
+
+    .sidebar ul li a:hover {
+        text-decoration: unset;
     }

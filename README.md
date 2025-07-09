@@ -132,7 +132,6 @@ body {
 .content {
   position: relative;
   padding: 60px 30px;
-  border-radius: 20px;
   background: white;
   box-shadow: 
     0 4px 20px rgba(0,0,0,0.03),
