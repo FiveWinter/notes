@@ -4,11 +4,7 @@
     <!-- 技术模块 -->
     <a href="./technology/" class="module tech">
       <div class="module-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-          <line x1="8" y1="21" x2="16" y2="21"></line>
-          <line x1="12" y1="17" x2="12" y2="21"></line>
-        </svg>
+        <i class="fa fa-code"></i>
       </div>
       <h3>技术</h3>
       <div class="module-accent"></div>
@@ -17,10 +13,7 @@
     <!-- 业务模块 -->
     <a href="./business/" class="module business">
       <div class="module-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-        </svg>
+        <i class="fa fa-line-chart"></i>
       </div>
       <h3>业务</h3>
       <div class="module-accent"></div>
@@ -29,12 +22,7 @@
     <!-- 工作日常模块 -->
     <a href="./daily/" class="module daily">
       <div class="module-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
+        <i class="fa fa-calendar"></i>
       </div>
       <h3>工作日常</h3>
       <div class="module-accent"></div>
@@ -97,6 +85,7 @@ body {
 .module-icon {
   margin-bottom: 30px;
   transition: all 0.3s ease;
+  font-size: 2.5rem;
 }
 
 /* 模块标题 */
