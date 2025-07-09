@@ -49,7 +49,7 @@
           <div class="calendar-icon">
             <div class="cal-header"></div>
             <div class="cal-body">
-              <span>15</span>
+              <span>21</span>
             </div>
           </div>
         </div>
@@ -73,7 +73,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   background: #fafafa;
   font-family: 'Inter', sans-serif;
 }
