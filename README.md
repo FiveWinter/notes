@@ -24,6 +24,7 @@
 <style>
 .content {
   margin-left: 0px;
+  left: 0px;
 }
 .sidebar-toggle{
     display: none;
