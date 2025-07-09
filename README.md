@@ -1,60 +1,60 @@
-<!-- 页面主容器 -->
-<div class="page-wrapper">
-  <!-- 技术模块 -->
+<!-- 页面容器（居中布局） -->
+<div class="page-center">
+  <!-- 技术模块（代码符号图标） -->
   <div class="module-container">
     <a href="./technology/" class="module-link">
       <!-- 装饰层：第一个div -->
-      <div class="decor-layer">
-        <div class="corner-ornament tech"></div>
-        <div class="subtle-pattern"></div>
+      <div class="decor">
+        <div class="shine tech"></div>
       </div>
       <!-- 内容层：第二个div -->
-      <div class="content-layer tech">
-        <div class="icon-holder">
-          <span class="code-icon">&lt;/&gt;</span>
+      <div class="content tech">
+        <div class="icon">
+          <span class="code-symbol">&lt;/&gt;</span>
         </div>
         <h3>技术</h3>
-        <div class="bottom-glow"></div>
+        <div class="hover-indicator"></div>
       </div>
     </a>
   </div>
 
-  <!-- 业务模块 -->
+  <!-- 业务模块（保持不变） -->
   <div class="module-container">
     <a href="./business/" class="module-link">
-      <div class="decor-layer">
-        <div class="corner-ornament business"></div>
-        <div class="subtle-pattern"></div>
+      <!-- 装饰层：第一个div -->
+      <div class="decor">
+        <div class="shine business"></div>
       </div>
-      <div class="content-layer business">
-        <div class="icon-holder">
-          <div class="target-ring"></div>
-          <div class="target-dot"></div>
+      <!-- 内容层：第二个div -->
+      <div class="content business">
+        <div class="icon">
+          <div class="target-marker"></div>
         </div>
         <h3>业务</h3>
-        <div class="bottom-glow"></div>
+        <div class="hover-indicator"></div>
       </div>
     </a>
   </div>
 
-  <!-- 工作日常模块 -->
+  <!-- 工作日常模块（日历图标） -->
   <div class="module-container">
     <a href="./daily/" class="module-link">
       <!-- 装饰层：第一个div -->
-      <div class="decor-layer">
-        <div class="corner-ornament daily"></div>
-        <div class="subtle-pattern"></div>
+      <div class="decor">
+        <div class="shine daily"></div>
       </div>
       <!-- 内容层：第二个div -->
-      <div class="content-layer daily">
-        <div class="icon-holder">
-          <div class="calendar-frame">
-            <div class="calendar-top"></div>
-            <div class="calendar-date">15</div>
+      <div class="content daily">
+        <div class="icon">
+          <div class="calendar-icon">
+            <div class="cal-header"></div>
+            <div class="cal-body">
+              <span>15</span>
+            </div>
           </div>
         </div>
         <h3>工作日常</h3>
-        <div class="bottom-glow"></div>
+        <div class="hover-indicator"></div>
       </div>
     </a>
   </div>
@@ -69,26 +69,27 @@
 }
 
 body {
-  background: #fefefe;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
+  background: #fafafa;
   font-family: 'Inter', sans-serif;
 }
 
-.page-wrapper {
+/* 居中容器 */
+.page-center {
   display: flex;
-  gap: 70px;
-  max-width: 1400px;
+  gap: 50px;
   width: 100%;
+  max-width: 1000px;
   position: relative;
 }
 
 .module-container {
   flex: 1;
-  min-width: 320px;
+  min-width: 250px;
 }
 
 .module-link {
@@ -97,8 +98,8 @@ body {
   position: relative;
 }
 
-/* 装饰层样式 */
-.decor-layer {
+/* 装饰层（第一个div） */
+.decor {
   position: absolute;
   top: 0;
   left: 0;
@@ -108,198 +109,177 @@ body {
   pointer-events: none;
 }
 
-/* 角落装饰 */
-.corner-ornament {
+.shine {
   position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0.2;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+  transition: all 0.6s ease;
 }
 
-/* 背景纹理 */
-.subtle-pattern {
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-    radial-gradient(rgba(0,0,0,0.01) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: 0 0, 25px 25px;
-}
-
-/* 内容层样式（卡片主体） */
-.content-layer {
+/* 内容层（第二个div：卡片主体） */
+.content {
   position: relative;
-  padding: 80px 40px;
-  border-radius: 24px;
-  border: 1px solid #f0f0f0;
-  background: linear-gradient(180deg, white 0%, #fcfcfc 100%);
+  padding: 60px 30px;
+  border-radius: 20px;
+  background: white;
   box-shadow: 
-    0 8px 20px rgba(0,0,0,0.02),
-    0 2px 5px rgba(0,0,0,0.01);
+    0 4px 20px rgba(0,0,0,0.03),
+    0 1px 3px rgba(0,0,0,0.02);
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   z-index: 2;
-  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 /* 图标容器 */
-.icon-holder {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 55px;
-  border-radius: 18px;
+.icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 35px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease;
-  position: relative;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
 /* 标题样式 */
-.content-layer h3 {
-  font-size: 2.2rem;
+.content h3 {
+  font-size: 1.8rem;
   font-weight: 500;
-  color: #222;
+  color: #333;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   transition: all 0.4s ease;
-  position: relative;
-  z-index: 2;
 }
 
-/* 底部光效 */
-.bottom-glow {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  opacity: 0;
-  transition: all 0.6s ease;
-  z-index: 1;
+/* 底部指示器 */
+.hover-indicator {
+  width: 40px;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: all 0.5s ease;
 }
 
-/* 技术模块配色 */
-.corner-ornament.tech { background: #3b82f6; }
-.content-layer.tech { border-color: #e6f2ff; }
-.content-layer.tech .icon-holder { background: #f0f7ff; }
-.code-icon {
+/* 技术模块（代码符号图标） */
+.shine.tech { background: #3b82f6; }
+.content.tech .icon { background: #f0f7ff; }
+.code-symbol {
   font-family: 'Consolas', monospace;
-  font-size: 3rem;
-  color: #3b82f6;
+  font-size: 2.6rem;
   font-weight: bold;
+  color: #3b82f6;
 }
-.content-layer.tech .bottom-glow {
-  background: linear-gradient(to top, rgba(59, 130, 246, 0.1), transparent);
-}
+.content.tech .hover-indicator { background: #3b82f6; }
 
-/* 业务模块配色 */
-.corner-ornament.business { background: #10b981; }
-.content-layer.business { border-color: #e6f9ec; }
-.content-layer.business .icon-holder { background: #f0fff4; }
-.target-ring {
-  width: 48px;
-  height: 48px;
-  border: 4px solid #10b981;
+/* 业务模块（保持不变） */
+.shine.business { background: #10b981; }
+.content.business .icon { background: #f0fff4; }
+.target-marker {
+  width: 36px;
+  height: 36px;
+  position: relative;
+}
+.target-marker::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border: 3px solid #10b981;
   border-radius: 50%;
   opacity: 0.7;
 }
-.target-dot {
+.target-marker::after {
+  content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
   background: #10b981;
   border-radius: 50%;
 }
-.content-layer.business .bottom-glow {
-  background: linear-gradient(to top, rgba(16, 185, 129, 0.1), transparent);
-}
+.content.business .hover-indicator { background: #10b981; }
 
-/* 工作日常模块配色 */
-.corner-ornament.daily { background: #f97316; }
-.content-layer.daily { border-color: #fff0e0; }
-.content-layer.daily .icon-holder { background: #fff8f0; }
-.calendar-frame {
-  width: 48px;
-  height: 48px;
+/* 工作日常模块（日历图标） */
+.shine.daily { background: #f97316; }
+.content.daily .icon { background: #fff8f0; }
+.calendar-icon {
+  width: 36px;
+  height: 36px;
   position: relative;
 }
-.calendar-top {
-  width: 48px;
-  height: 10px;
+.cal-header {
+  width: 36px;
+  height: 8px;
   background: #f97316;
-  border-radius: 4px 4px 0 0;
+  border-radius: 3px 3px 0 0;
 }
-.calendar-date {
-  width: 48px;
-  height: 38px;
+.cal-body {
+  width: 36px;
+  height: 28px;
   border: 2px solid #f97316;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 3px 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+}
+.cal-body span {
+  font-size: 1.1rem;
   font-weight: 500;
   color: #f97316;
 }
-.content-layer.daily .bottom-glow {
-  background: linear-gradient(to top, rgba(249, 115, 22, 0.1), transparent);
-}
+.content.daily .hover-indicator { background: #f97316; }
 
 /* 悬停交互效果 */
-.module-link:hover .content-layer {
-  transform: translateY(-18px);
+.module-link:hover .content {
+  transform: translateY(-10px) scale(1.02);
   box-shadow: 
-    0 25px 50px rgba(0,0,0,0.08),
-    0 10px 20px rgba(0,0,0,0.04);
-  border-color: #e8e8e8;
+    0 15px 35px rgba(0,0,0,0.06),
+    0 5px 10px rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.08);
 }
 
-.module-link:hover .icon-holder {
-  transform: scale(1.12);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+.module-link:hover .icon {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
 }
 
-.module-link:hover .content-layer h3 {
+.module-link:hover .content h3 {
   color: #111;
-  transform: translateY(-5px);
+  letter-spacing: 0.5px;
 }
 
-.module-link:hover .corner-ornament {
-  transform: rotate(20deg) scale(1.8);
-  opacity: 0.4;
+.module-link:hover .hover-indicator {
+  width: 70px;
 }
 
-.module-link:hover .bottom-glow {
-  opacity: 1;
-  height: 50%;
+.module-link:hover .shine {
+  opacity: 0.25;
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* 响应式设计 */
-@media (max-width: 900px) {
-  .page-wrapper {
+/* 响应式（保持居中） */
+@media (max-width: 768px) {
+  .page-center {
     flex-direction: column;
-    gap: 70px;
-    padding: 60px 20px;
+    gap: 40px;
+    padding: 50px 20px;
   }
   
   .module-container {
     width: 100%;
-    max-width: 420px;
-  }
-  
-  .content-layer {
-    padding: 70px 30px;
-  }
-  
-  .content-layer h3 {
-    font-size: 2rem;
+    max-width: 300px;
   }
 }
 
