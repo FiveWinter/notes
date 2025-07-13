@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+.content {
+    padding-top: unset;
+}
+
 
 /* 首页容器样式 */
 .section-container {

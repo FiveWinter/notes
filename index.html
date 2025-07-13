@@ -17,9 +17,12 @@
     window.$docsify = {
       el: "#app",
       repo: 'https://github.com/FiveWinter/notes',
-      loadSidebar:  !isHomePage 
+      loadSidebar:  !isHomePage ,
+      subMaxLevel: 3,
+      sidebarDisplayLevel: 1
     }
   </script>
   <script src="./js/docsify.min.js"></script>
+  <script src="./js/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
