@@ -134,7 +134,16 @@ Bonjour!
 Ciao!
 
 <!-- tabs:end -->
+### Section X
+```plantuml
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
 
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+```
 
 This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.
 <!-- slide:break -->
