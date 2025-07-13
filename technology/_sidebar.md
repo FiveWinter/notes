@@ -1,4 +1,4 @@
 * [首页](./)
 * [技术文档 1](./technology/index1)
 * [技术文档 2](./technology/index2)
-  * [Tomcat](./tutorials/tomcat/index)
+  * [Tomcat](./technology/tomcat)

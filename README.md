@@ -20,7 +20,7 @@
 
   <!-- 业务模块（保持不变） -->
   <div class="module-container">
-    <a href="./business/" class="module-link">
+    <a href="#/./business/index" class="module-link">
       <!-- 装饰层：第一个div -->
       <div class="decor">
         <div class="shine business"></div>
@@ -38,7 +38,7 @@
 
   <!-- 工作日常模块（日历图标） -->
   <div class="module-container">
-    <a href="./daily/" class="module-link">
+    <a href="#/./daily_work/index" class="module-link">
       <!-- 装饰层：第一个div -->
       <div class="decor">
         <div class="shine daily"></div>
