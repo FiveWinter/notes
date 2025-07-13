@@ -100,3 +100,39 @@ bash start_docsify.sh
 ## 封面配置文件（_coverpage.md）
 
 > [Docsify官网封面配置教程](https://docsify.js.org/#/zh-cn/cover)
+
+> [!NOTE]
+> An alert of type 'note' using global style 'callout'.
+
+> [!TIP]
+> An alert of type 'tip' using global style 'callout'.
+
+> [!WARNING]
+> An alert of type 'warning' using global style 'callout'.
+
+> [!ATTENTION]
+> An alert of type 'attention' using global style 'callout'.
+
+<!-- tabs:start -->
+
+#### **English**
+
+Hello!
+
+#### **French**
+
+Bonjour!
+
+#### **Italian**
+
+Ciao!
+
+<!-- tabs:end -->
+
+
+This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.
+<!-- slide:break -->
+This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.
+This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.
+This is a simple plugin which gives you a flexible two-column layout via a custom markdown syntax.
+<!-- slide:break-# -->

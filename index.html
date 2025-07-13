@@ -67,7 +67,51 @@
                 depth: 4,
                 hideOtherSidebarContent: false,
                 // namespace: 'Docsify-Guide',
-            }
+            },
+            copyCode: {
+              buttonText: '复制',
+              errorText: '错误',
+              successText: '复制',
+            },
+            pagination: {
+              previousText: '上一章节',
+              nextText: '下一章节',
+              crossChapter: true,
+              crossChapterText: true,
+            },
+              tabs: {
+                persist: true, // default
+                sync: true, // default
+                theme: 'classic', // default
+                tabComments: true, // default
+                tabHeadings: true // default
+              },
+              'flexible-alerts': {
+                note: {
+                  label: {
+                    '/de-DE/': 'Hinweis',
+                    '/': 'Note'
+                  }
+                },
+                tip: {
+                  label: {
+                    '/de-DE/': 'Tipp',
+                    '/': 'Tip'
+                  }
+                },
+                warning: {
+                  label: {
+                    '/de-DE/': 'Warnung',
+                    '/': 'Warning'
+                  }
+                },
+                attention: {
+                  label: {
+                    '/de-DE/': 'Achtung',
+                    '/': 'Attention'
+                  }
+                }
+              }
         }
     </script>
     <!-- docsify的js依赖 -->
@@ -82,6 +126,17 @@
     <script src="./js/docsify-copy-code.min.js"></script>
     <!-- 菜单折叠 -->
     <script src="./js/docsify-sidebar-collapse.min.js"></script>
+    <!-- 编辑 -->
+    <script src="./js/docsify-edit-on-github.min.js"></script>
+    <!-- table -->
+    <script src="./js/docsify-tabs.min.js"></script>
+    <!-- alerts -->
+    <script src="./js/docsify-plugin-flexible-alerts.min.js"></script>
+    <!-- 两列 -->
+    <script src="./js/docsify-slides.min.js"></script>
+    <!-- 分页 -->
+    <script src="./js/docsify-pagination.min.js"></script>
+  
 </body>
 
 </html>
