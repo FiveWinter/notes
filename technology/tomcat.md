@@ -103,6 +103,13 @@ bash start_docsify.sh
 业务1111111111
 ```
 
+```sql
+SELECT column1, aggregate_function(column2)
+FROM table_name
+GROUP BY column1
+HAVING condition;
+```
+
 ## 封面配置文件（_coverpage.md）
 
 > [Docsify官网封面配置教程](https://docsify.js.org/#/zh-cn/cover)
