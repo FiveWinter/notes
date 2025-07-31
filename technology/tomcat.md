@@ -85,16 +85,17 @@ span
 ### Section X
 
 ```mermaid
-graph TB
-s(开始) --> step1>输入参数]
-subgraph 强调
-step1 --> step2{判断参数合法性}
-end
-step2 ==> |校验失败|e
-step2--> |校验成功|step3[处理业务]
-step3 --> e(结束)
-style s rx: 10, ry: 10
-style e rx: 10, ry: 10
+graph TD
+    A[开始] --> B[创建合同]
+    
+    subgraph 整体
+        D[创建订单]
+        E[重建据点]
+        F[创建条码]
+    end
+    
+    B --> 整体
+    整体 --> G[发起审批]
 ```
 
 
