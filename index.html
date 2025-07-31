@@ -132,12 +132,22 @@
             markdown: {
                 renderer: {
                     code: function (code, lang) {
-                        var html = '';
-                        if (code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)) {
-                            html = '<div class="mermaid">' + code + '</div>';
+                        // 识别 Mermaid 图表（支持更多类型：graph/sequenceDiagram/gantt/pie/classDiagram 等）
+                        const isMermaid = lang === 'mermaid' ||
+                            code.match(/^sequenceDiagram/) ||
+                            code.match(/^graph/) ||
+                            code.match(/^gantt/) ||
+                            code.match(/^pie/) ||
+                            code.match(/^classDiagram/);
+
+                        if (isMermaid) {
+                            // 仅返回 Mermaid 图表容器，不显示代码块
+                            return '<div class="mermaid">' + code + '</div>';
+                        } else {
+                            // 非 Mermaid 代码，正常显示语法高亮
+                            const hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup);
+                            return '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>';
                         }
-                        var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup);
-                        return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>';
                     }
                 }
             }
